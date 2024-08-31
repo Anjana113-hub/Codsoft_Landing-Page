@@ -1,0 +1,254 @@
+/* Basic CSS for structure, layout, and design */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4vw; /* Responsive font size */
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 6vw; /* Larger font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 8vw; /* Even larger font size for mobile screens */
+    }
+}
+
+.secondary-cta {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent, so it's not blue */
+    font-weight: bold; /* Optionally, make the text bold */
+    padding: 10px 20px;
+    border: 2px solid #9d0707; /* Optional: Add a border */
+    background-color: #f8b400; /* Optional: Add a background color */
+    border-radius: 5px; /* Optional: Make the corners rounded */
+    display: inline-block; /* Ensure proper padding and layout */
+}
+
+.secondary-cta:hover {
+    background-color: #ff6600; /* Change background on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+/* General styles */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation styling */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger menu button styling */
+.menu-button-container {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-button, .menu-button::before, .menu-button::after {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu-button::before, .menu-button::after {
+    content: '';
+    position: absolute;
+}
+
+.menu-button::before {
+    top: -8px;
+}
+
+.menu-button::after {
+    top: 8px;
+}
+
+/* Hide checkbox by default */
+#menu-toggle {
+    display: none;
+}
+
+/* Display the menu when the checkbox is checked */
+#menu-toggle:checked + label .menu-button {
+    background-color: transparent;
+}
+
+#menu-toggle:checked + label .menu-button::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#menu-toggle:checked + label .menu-button::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* Navigation links styling */
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Call-to-action button styling */
+.nav ul li .cta {
+    background-color: #ff6600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav ul li .cta:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide the navigation links by default on smaller screens */
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    /* Display the navigation links when the menu is toggled */
+    #menu-toggle:checked ~ ul {
+        display: flex;
+    }
+
+    .nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu-button-container {
+        display: block;
+    }
+}
+
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.cta {
+    background: #ff6600;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hide the mobile menu by default */
+
+.hero {
+    background: url("kfc chicken.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.about, .menu, .specials, .testimonials, .locations, .contact {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the menu in small screens */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .mobile-menu {
+        display: block; /* Show the hamburger menu icon */
+        cursor: pointer;
+    }
+
+    nav a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #fff;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 50px 0;
+    }
+    .cta {
+        padding: 8px 15px;
+    }
+    footer ul {
+        flex-direction: column;
+    }
+    footer a {
+        padding: 8px 0;
+    }
+    .social-media img {
+        width: 25px;
+    }
+    .contact input, .contact textarea {
+        width: 90%;
+    }
+}
