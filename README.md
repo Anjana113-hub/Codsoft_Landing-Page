@@ -1,3 +1,3 @@
 # CodSoft_Task2_Landing-Page
-  <img src=".png">
+  <img src="Foodie.png">
   
